@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chemistry · Study Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f5f5f7;
+      --card: rgba(255,255,255,0.72);
+      --text: #111;
+      --secondary: #6e6e73;
+      --border: rgba(0,0,0,0.08);
+      --shadow: rgba(0,0,0,0.08);
+      --accent: #0071e3;
+    }
+
+    body.dark {
+      --bg: #0b0b0d;
+      --card: rgba(28,28,30,0.72);
+      --text: #f5f5f7;
+      --secondary: #a1a1a6;
+      --border: rgba(255,255,255,0.1);
+      --shadow: rgba(0,0,0,0.35);
+      --accent: #2997ff;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(0,113,227,.10), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(175,82,222,.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                   "Segoe UI", sans-serif;
+      transition: .35s;
+    }
+
+    .container {
+      width: min(1050px, 92%);
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      background: rgba(245,245,247,.72);
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.dark nav {
+      background: rgba(11,11,13,.72);
+    }
+
+    .nav {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .back {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .theme {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 0 45px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 8vw, 68px);
+      letter-spacing: -3px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: var(--secondary);
+      font-size: 17px;
+    }
+
+    .chapters {
+      display: grid;
+      gap: 14px;
+      padding-bottom: 70px;
+    }
+
+    .chapter {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 23px 25px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 35px var(--shadow);
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .chapter:hover {
+      transform: translateX(5px);
+      border-color: rgba(0,113,227,.3);
+    }
+
+    .number {
+      min-width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(0,113,227,.1);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .chapter h2 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .chapter p {
+      color: var(--secondary);
+      font-size: 13px;
+    }
+
+    .arrow {
+      margin-left: auto;
+      font-size: 20px;
+      color: var(--secondary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0 40px;
+      color: var(--secondary);
+      font-size: 13px;
+    }
+
+    @media(max-width:600px) {
+      .chapter {
+        padding: 20px;
+      }
+
+      .chapter h2 {
+        font-size: 16px;
+      }
+
+      .number {
+        min-width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav">
+      <a href="science.html" class="back">← Science</a>
+
+      <div class="logo">Study Hub</div>
+
+      <button class="theme" id="theme">☀️</button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="eyebrow">SCIENCE · CHEMISTRY</div>
+
+      <h1>Chemistry ⚗️</h1>
+
+      <p>Select a chapter to start learning.</p>
+    </section>
+
+    <section class="chapters">
+
+      <div class="chapter">
+        <div class="number">01</div>
+        <div>
+          <h2>Chemical Reactions and Equations</h2>
+          <p>Reactions · Equations · Types · Oxidation & Reduction</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="chapter">
+        <div class="number">02</div>
+        <div>
+          <h2>Acids, Bases and Salts</h2>
+          <p>Indicators · pH · Reactions · Important salts</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="chapter">
+        <div class="number">03</div>
+        <div>
+          <h2>Metals and Non-metals</h2>
+          <p>Properties · Reactivity · Ionic compounds · Extraction</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="chapter">
+        <div class="number">04</div>
+        <div>
+          <h2>Carbon and its Compounds</h2>
+          <p>Covalent bonding · Hydrocarbons · Functional groups</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="chapter">
+        <div class="number">05</div>
+        <div>
+          <h2>Periodic Classification of Elements</h2>
+          <p>Periodic table · Trends · Groups · Periods</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Study Hub · Grade 10 CBSE
+  </footer>
+
+  <script>
+    const button = document.getElementById("theme");
+    const saved = localStorage.getItem("studyHubTheme");
+
+    if (saved === "dark") {
+      document.body.classList.add("dark");
+      button.textContent = "🌙";
+    }
+
+    button.onclick = () => {
+      document.body.classList.toggle("dark");
+
+      const dark = document.body.classList.contains("dark");
+
+      button.textContent = dark ? "🌙" : "☀️";
+
+      localStorage.setItem(
+        "studyHubTheme",
+        dark ? "dark" : "light"
+      );
+    };
+  </script>
+
+</body>
+</html>
